@@ -1,4 +1,4 @@
-class Pessoa {
+export class Pessoa {
   private _Nome: string;
   private _Idade: number;
   private _CPF: string;
