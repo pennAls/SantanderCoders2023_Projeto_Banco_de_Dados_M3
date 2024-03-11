@@ -13,11 +13,14 @@ class Banco_Dados {
       this.pessoas.push(novaPessoa);
       return "Adicionado com sucesso.";
     }
-}   
+  }
 
-    ListarPessoa():Pessoa[]{
-        return dados.Pessoas
-    }
+  ListarPessoa(): void {
+    const ListaDePessoas = dados.Pessoas.forEach((pessoa) =>
+      console.table(pessoa)
+    );
+    return ListaDePessoas;
+  }
 
   get Pessoas(): Pessoa[] {
     return this.pessoas;
@@ -26,13 +29,13 @@ class Banco_Dados {
 
 const dados = new Banco_Dados();
 
-// const novaPessoa = new Pessoa("joao", 20, "12312312312");
+const novaPessoa = new Pessoa("joao", 20, "12312312312");
+const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312");
 
 // const newPessoa = new Pessoa("joao", 18, "12312312312");
 
-// console.log(dados.AdicionarPessoa(novaPessoa));
+console.log(dados.AdicionarPessoa(novaPessoa));
+console.log(dados.AdicionarPessoa(novaPessoa2));
 // console.log(dados.AdicionarPessoa(newPessoa));
 
-// console.log(dados.ListarPessoa())
-
-
+dados.ListarPessoa();
