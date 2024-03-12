@@ -3,6 +3,7 @@ import { Pessoa } from "./Pessoa.ts";
 class Banco_Dados {
   private pessoas: Pessoa[] = [];
 
+
   AdicionarPessoa(novaPessoa: Pessoa): string {
     const pessoaExiste = this.pessoas.find(
       (pessoa) => pessoa.Nome === novaPessoa.Nome
@@ -24,18 +25,39 @@ class Banco_Dados {
 
   get Pessoas(): Pessoa[] {
     return this.pessoas;
+
+  private _deleteUser(deleteUser: Pessoa) {
+    if (this.pessoas.length === 0) {
+      return "Não há Usuários cadastrados";
+    }
+    const pessoaIndex = this.pessoas.findIndex(
+      (person) => person.Nome === deleteUser.Nome
+    );
+    if (pessoaIndex !== -1) {
+      this.pessoas.splice(pessoaIndex, 1);
+      return "Usuário deletado com sucesso";
+    } else {
+      return "Usuário não encontrado";
+    }
+  }
+ 
+ public deleteUser(people: Pessoa) {
+    const result = this._deleteUser(people);
+    console.log(result);
+
   }
 }
 
 const dados = new Banco_Dados();
+
 
 const novaPessoa = new Pessoa("joao", 20, "12312312312");
 const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312");
 
 // const newPessoa = new Pessoa("joao", 18, "12312312312");
 
-console.log(dados.AdicionarPessoa(novaPessoa));
-console.log(dados.AdicionarPessoa(novaPessoa2));
-// console.log(dados.AdicionarPessoa(newPessoa));
+const people = new Pessoa("Fulano", 19, "040.142.444-22");
+const people1 = new Pessoa("FulanoP", 19, "040.142.444-22");
 
-dados.ListarPessoa();
+
+
