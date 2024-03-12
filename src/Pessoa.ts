@@ -2,8 +2,9 @@ export class Pessoa {
   private _Nome: string;
   private _Idade: number;
   private _CPF: string;
+  private _Email: string;
 
-  constructor(nome: string, idade: number, cpf: string) {
+  constructor(nome: string, idade: number, cpf: string, email: string | undefined ) {
     for (const letra of nome) {
       if (letra === " " || !isNaN(parseInt(letra))) {
         throw new Error("O nome não pode conter números");
@@ -25,7 +26,13 @@ export class Pessoa {
     } else {
       throw new Error("O CPF é inválido");
     }
+
+    if (email)
+     this._Email = email
+    else
+     throw new Error("e-mail não preenchido");
   }
+
   public get Nome(): string {
     return this._Nome;
   }
@@ -46,7 +53,11 @@ export class Pessoa {
   public set CPF(value: string) {
     this._CPF = value;
   }
-}
 
-const people = new Pessoa("Fulano", 19, "040.142.444-22");
-console.log(people)
+  public get Email(): string | undefined{
+    return this._Email;
+  }
+  public set Email(value: string) {
+    this._Email = value;
+  }
+}
