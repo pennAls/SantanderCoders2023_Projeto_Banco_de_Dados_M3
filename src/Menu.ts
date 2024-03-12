@@ -1,6 +1,6 @@
 import { Pessoa } from './Pessoa';
 import { Banco_Dados } from './Banco_Dados';
-import { promptPessoaNew, promptPessoaUpdate, prompt} from './prompts';
+import { promptPessoaNew, promptPessoaUpdate, prompt} from './Prompts';
 
 
 const dados = new Banco_Dados();

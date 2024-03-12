@@ -46,11 +46,11 @@ export class Banco_Dados {
     }
 
 
-  ListarPessoa(): void {
+  ListarPessoa(): Pessoa[] {
     const ListaDePessoas = dados.Pessoas.forEach((pessoa) =>
       console.table(pessoa)
     );
-    return ListaDePessoas;
+    return this.pessoas;
   }
 
   get Pessoas(): Pessoa[] {

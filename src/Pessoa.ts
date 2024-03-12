@@ -6,7 +6,7 @@ export class Pessoa {
 
   constructor(nome: string, idade: number, cpf: string, email: string | undefined ) {
     for (const letra of nome) {
-      if (letra === " " || !isNaN(parseInt(letra))) {
+      if (!isNaN(parseInt(letra))) {
         throw new Error("O nome não pode conter números");
       }
     }
@@ -62,6 +62,3 @@ export class Pessoa {
     this._Email = value;
   }
 }
-// const people = new Pessoa("Fulano", 19, "040.142.444-22");
-// console.log(people)
-

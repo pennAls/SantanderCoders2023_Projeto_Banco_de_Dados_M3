@@ -2,12 +2,12 @@
   "name": "projeto_final_banco_de_dados",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Menu.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node-dev src/Pessoa.ts",
+    "start": "npx ts-node-dev src/Menu.ts",
     "start1": "npx ts-node-dev src/Banco_Dados.ts",
-    "start2": "npx ts-node-dev src/index.ts"
+    "start2": "npx ts-node-dev src/Pessoa.ts"
   },
   "keywords": [],
   "author": "",
