@@ -3,6 +3,29 @@ import { Pessoa } from "./Pessoa.ts";
 class Banco_Dados {
   private pessoas: Pessoa[] = [];
 
+
+  AdicionarPessoa(novaPessoa: Pessoa): string {
+    const pessoaExiste = this.pessoas.find(
+      (pessoa) => pessoa.Nome === novaPessoa.Nome
+    );
+    if (pessoaExiste) {
+      return `Já existe uma pessoa cadastrada com esse nome.`;
+    } else {
+      this.pessoas.push(novaPessoa);
+      return "Adicionado com sucesso.";
+    }
+  }
+
+  ListarPessoa(): void {
+    const ListaDePessoas = dados.Pessoas.forEach((pessoa) =>
+      console.table(pessoa)
+    );
+    return ListaDePessoas;
+  }
+
+  get Pessoas(): Pessoa[] {
+    return this.pessoas;
+
   private _deleteUser(deleteUser: Pessoa) {
     if (this.pessoas.length === 0) {
       return "Não há Usuários cadastrados";
@@ -17,27 +40,24 @@ class Banco_Dados {
       return "Usuário não encontrado";
     }
   }
-
-  listar(): Pessoa[] {
-    return this.pessoas;
-  }
-
-  add(people: Pessoa) {
-    this.pessoas.push(people);
-  }
-
+ 
  public deleteUser(people: Pessoa) {
     const result = this._deleteUser(people);
     console.log(result);
+
   }
 }
 
 const dados = new Banco_Dados();
+
+
+const novaPessoa = new Pessoa("joao", 20, "12312312312");
+const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312");
+
+// const newPessoa = new Pessoa("joao", 18, "12312312312");
+
 const people = new Pessoa("Fulano", 19, "040.142.444-22");
 const people1 = new Pessoa("FulanoP", 19, "040.142.444-22");
 
-dados.add(people);
-dados.add(people1);
-console.log(dados.listar());
-dados.deleteUser(people);
-console.log(dados.listar());
+
+
