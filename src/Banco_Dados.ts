@@ -37,6 +37,7 @@ const people = new Pessoa("Fulano", 19, "040.142.444-22");
 const people1 = new Pessoa("FulanoP", 19, "040.142.444-22");
 
 dados.add(people);
+dados.add(people1);
 console.log(dados.listar());
-dados.deleteUser(people1);
+dados.deleteUser(people);
 console.log(dados.listar());
