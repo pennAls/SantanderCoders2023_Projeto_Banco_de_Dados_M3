@@ -1,6 +1,5 @@
 import { Pessoa } from "./Pessoa.ts";
 
-
 export class Banco_Dados {
     private pessoas: Pessoa[] = [];
 
@@ -56,7 +55,8 @@ export class Banco_Dados {
 
   get Pessoas(): Pessoa[] {
     return this.pessoas;
-
+  }
+  
   private _deleteUser(deleteUser: Pessoa) {
     if (this.pessoas.length === 0) {
       return "Não há Usuários cadastrados";
@@ -82,13 +82,10 @@ export class Banco_Dados {
 const dados = new Banco_Dados();
 
 
-const novaPessoa = new Pessoa("joao", 20, "12312312312");
-const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312");
+const novaPessoa = new Pessoa("joao", 20, "12312312312","fulano@gmail.com");
+const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312","fulano@gmail.com");
 
 // const newPessoa = new Pessoa("joao", 18, "12312312312");
-
-const people = new Pessoa("Fulano", 19, "040.142.444-22");
-const people1 = new Pessoa("FulanoP", 19, "040.142.444-22");
 
 
 
