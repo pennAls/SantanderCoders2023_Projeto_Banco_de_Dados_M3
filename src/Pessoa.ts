@@ -54,6 +54,7 @@ export class Pessoa {
     this._CPF = value;
   }
 
+
   public get Email(): string | undefined{
     return this._Email;
   }
@@ -61,3 +62,7 @@ export class Pessoa {
     this._Email = value;
   }
 }
+=======
+// const people = new Pessoa("Fulano", 19, "040.142.444-22");
+// console.log(people)
+

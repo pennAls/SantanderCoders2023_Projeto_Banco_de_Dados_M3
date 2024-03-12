@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node-dev src/index.ts"
+
+   
+=======
+
+
+    "start": "npx ts-node-dev src/Pessoa.ts",
+    "start1": "npx ts-node-dev src/Banco_Dados.ts"
+     "start2": "npx ts-node-dev src/index.ts"
+
+
+
   },
   "keywords": [],
   "author": "",
