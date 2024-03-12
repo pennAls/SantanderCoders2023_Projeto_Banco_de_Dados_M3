@@ -3,7 +3,7 @@ import { Pessoa } from "./Pessoa.ts";
 export class Banco_Dados {
     private pessoas: Pessoa[] = [];
 
-    AdicionarPessoa(novaPessoa: Pessoa): string {
+    adicionarPessoa(novaPessoa: Pessoa): string {
         const pessoaExiste = this.pessoas.find(
             (pessoa) => pessoa.Nome === novaPessoa.Nome
         );
@@ -33,20 +33,20 @@ export class Banco_Dados {
 
     alterar(nome: string, pessoa: Pessoa) {
 
-        const indice = this.ListarPessoa().findIndex(
+        const indice = this.listarPessoa().findIndex(
             (p) => p.Nome === nome
           );
           if (indice === -1) {
             throw new Error ("Pessoa não encontrada!");
           }
 
-          this.ListarPessoa()[indice] = pessoa;
+          this.listarPessoa()[indice] = pessoa;
           console.log("Pessoa atualizada com sucesso!");
 
     }
 
 
-  ListarPessoa(): Pessoa[] {
+  listarPessoa(): Pessoa[] {
     const ListaDePessoas = dados.Pessoas.forEach((pessoa) =>
       console.table(pessoa)
     );
