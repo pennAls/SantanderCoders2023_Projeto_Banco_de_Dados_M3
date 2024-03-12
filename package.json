@@ -6,9 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
+   
+=======
+
 
     "start": "npx ts-node-dev src/Pessoa.ts",
     "start1": "npx ts-node-dev src/Banco_Dados.ts"
+     "start2": "npx ts-node-dev src/index.ts"
 
 
 
@@ -17,7 +21,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "prompt-sync": "^4.2.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/prompt-sync": "^4.2.3"
   }
 }
