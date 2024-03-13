@@ -30,6 +30,7 @@ export class Pessoa {
     return this._Idade;
   }
   public set Idade(value: number) {
+    console.log(this.validarIdade(value))
     if (!this.validarIdade(value)) {
       throw new Error("A idade é inválida");
     }

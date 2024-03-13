@@ -1,63 +1,54 @@
 import { Pessoa } from "./Pessoa.ts";
 
 export class Banco_Dados {
-    private pessoas: Pessoa[] = [];
+  private pessoas: Pessoa[] = [];
 
-    adicionarPessoa(novaPessoa: Pessoa): string {
-        const pessoaExiste = this.pessoas.find(
-            (pessoa) => pessoa.Nome === novaPessoa.Nome
-        );
-        if (pessoaExiste) {
-            return `Já existe uma pessoa cadastrada com esse nome.`;
-        } else {
-            this.pessoas.push(novaPessoa);
-            return "Adicionado com sucesso.";
-        }
-
-    }
-
-    buscarPorNome(nome: string) : Pessoa{
-
-        const pessoaEncontrada = this.pessoas.filter(
-            (pessoa) => pessoa.Nome === nome
-        );
-
-        if (pessoaEncontrada) {
-            console.log(pessoaEncontrada);
-            return pessoaEncontrada[0]
-        } else {
-            throw new Error ("Nome não encontrado");
-        }
-
-    }
-
-    alterar(nome: string, pessoa: Pessoa) {
-
-        const indice = this.listarPessoa().findIndex(
-            (p) => p.Nome === nome
-          );
-          if (indice === -1) {
-            throw new Error ("Pessoa não encontrada!");
-          }
-
-          this.listarPessoa()[indice] = pessoa;
-          console.log("Pessoa atualizada com sucesso!");
-
-    }
-
-
-  listarPessoa(): Pessoa[] {
-    const ListaDePessoas = dados.Pessoas.forEach((pessoa) =>
-      console.table(pessoa)
+  adicionarUsuario(novaPessoa: Pessoa): string {
+    const pessoaExiste = this.pessoas.find(
+      (pessoa) => pessoa.Nome === novaPessoa.Nome
     );
+    if (pessoaExiste) {
+      return `Já existe uma pessoa cadastrada com esse nome.`;
+    } else {
+      this.pessoas.push(novaPessoa);
+      return "Adicionado com sucesso.";
+    }
+  }
+
+  buscarPeloNome(nome: string): Pessoa {
+    const pessoaEncontrada = this.pessoas.filter(
+      (pessoa) => pessoa.Nome === nome
+    );
+
+    if (pessoaEncontrada) {
+      console.log(pessoaEncontrada);
+      return pessoaEncontrada[0];
+    } else {
+      throw new Error("Nome não encontrado");
+    }
+  }
+
+  atualizarUsuario(nome: string, pessoa: Pessoa) {
+    if (!pessoa) {
+      console.log(`Usuário não Encontrado`);
+      return;
+    }
+    const indice = this.pessoas.findIndex((p) => p.Nome === nome);
+
+    this.pessoas[indice] = pessoa;
+    console.log("Pessoa atualizada com sucesso!");
+  }
+
+  listarUsuario(): Pessoa[] {
+    console.table(this.pessoas);
     return this.pessoas;
   }
 
   get Pessoas(): Pessoa[] {
     return this.pessoas;
   }
-  
-  private _deleteUser(deleteUser: Pessoa) {
+
+  private deletarUsuario(deleteUser: Pessoa) {
     if (this.pessoas.length === 0) {
       return "Não há Usuários cadastrados";
     }
@@ -71,22 +62,16 @@ export class Banco_Dados {
       return "Usuário não encontrado";
     }
   }
- 
- public deleteUser(people: Pessoa) {
-    const result = this._deleteUser(people);
-    console.log(result);
 
+  public deleteUser(people: Pessoa) {
+    const result = this.deletarUsuario(people);
+    console.log(result);
   }
 }
 
 const dados = new Banco_Dados();
 
-
-const novaPessoa = new Pessoa("joao", 20, "12312312312","fulano@gmail.com");
-const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312","fulano@gmail.com");
+const novaPessoa = new Pessoa("joao", 20, "12312312312", "fulano@gmail.com");
+const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312", "fulano@gmail.com");
 
 // const newPessoa = new Pessoa("joao", 18, "12312312312");
-
-
-
-
