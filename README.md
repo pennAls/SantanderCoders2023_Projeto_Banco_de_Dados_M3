@@ -26,7 +26,7 @@
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
--  TypeScrpt
+-  TypeScript
     
 ## 🚀 Como Executar
 
@@ -34,20 +34,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 2. Instale as dependências: `npm install`
 3. Execute o projeto: `npm start`
 
-
 ## 💻 Desenvolvedores:
 
-Lucas Pena:
-<p align="left">
-<a href="https://www.linkedin.com/in/lucaspenals/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/lucaspenals/" height="30" width="40" /></a>
-</p>
+Lucas Pena: <a href="https://www.linkedin.com/in/lucaspenals/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/lucaspenals/" height="30" width="40" /></a>
 
-Priscila
+Priscila Lima: <a href="https://www.linkedin.com/in/lucaspenals/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/lucaspenals/" height="30" width="40" /></a>
 
-Thiago Albino:
-<p align="left">
-<a href="https://www.linkedin.com/in/thiagoalbino/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/thiagoalbino/" height="30" width="40" /></a>
-</p>
+Thiago Albino: <a href="https://www.linkedin.com/in/thiagoalbino/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/thiagoalbino/" height="30" width="40" /></a>
+
 
 
 ---
