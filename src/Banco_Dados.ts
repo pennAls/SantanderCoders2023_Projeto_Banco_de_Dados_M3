@@ -2,20 +2,23 @@ import { Pessoa } from "./Pessoa";
 export class Banco_Dados {
   private pessoas: Pessoa[] = [];
 
-  adicionarUsuario(novaPessoa: Pessoa): string | void {
+  private adicionarUsuario(novaPessoa: Pessoa): string | void {
     const pessoaExiste = this.pessoas.find(
       (pessoa) => pessoa.Nome === novaPessoa.Nome
     );
     if (pessoaExiste) {
-      console.log(`Ocorreu um erro: Já existe uma pessoa cadastrada com esse nome.\n`);
+      console.log(
+        `Ocorreu um erro: Já existe uma pessoa cadastrada com esse nome.\n`
+      );
       return;
     } else {
       this.pessoas.push(novaPessoa);
-      return `Pessoa adicionada com sucesso.\n`;
+      console.log(`Pessoa adicionada com sucesso.\n`);
+      return;
     }
   }
 
-  buscarPeloNome(nome: string): Pessoa {
+  private buscarPeloNome(nome: string): Pessoa {
     const pessoaEncontrada = this.pessoas.filter(
       (pessoa) => pessoa.Nome === nome
     );
@@ -29,7 +32,7 @@ export class Banco_Dados {
     }
   }
 
-  atualizarUsuario(nome: string, pessoa: Pessoa) {
+  private atualizarUsuario(nome: string, pessoa: Pessoa) {
     if (!pessoa) {
       console.log(`Ocorreu um erro: Usuário não encontrado.\n`);
       return;
@@ -40,7 +43,7 @@ export class Banco_Dados {
     console.log(`Pessoa atualizada com sucesso!\n`);
   }
 
-  listarUsuario(): Pessoa[] {
+  private listarUsuario(): Pessoa[] {
     console.table(this.pessoas);
     return this.pessoas;
   }
@@ -62,6 +65,22 @@ export class Banco_Dados {
     } else {
       return `Ocorreu um erro: Usuário não encontrado.`;
     }
+  }
+
+  public adicionarUser(novaPessoa: Pessoa): string | void {
+    return this.adicionarUsuario(novaPessoa);
+  }
+
+  public buscarUser(nome: string): Pessoa {
+    return this.buscarPeloNome(nome);
+  }
+
+  public atualizarUser(nome: string, pessoa: Pessoa): void {
+    this.atualizarUsuario(nome, pessoa);
+  }
+
+  public listarUser(): Pessoa[] {
+    return this.listarUsuario();
   }
 
   public deleteUser(people: string) {

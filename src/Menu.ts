@@ -44,28 +44,30 @@ class Menu extends Banco_Dados {
         switch (option) {
           case 1:
             const pessoaIn = promptPessoaNew();
-            this.adicionarUsuario(pessoaIn);
+            this.adicionarUser(pessoaIn);
             break;
           case 2:
-            this.listarUsuario();
+            this.listarUser();
             break;
           case 3:
             const pessoaSearch = prompt("Informe o nome para buscar: ").trim();
-            this.buscarPeloNome(pessoaSearch);
+            this.buscarUser(pessoaSearch);
             break;
           case 4:
             const nome = prompt("Informe o nome para alterar: ").trim();
-            const pessoaUpdate = this.buscarPeloNome(nome);
+            const pessoaUpdate = this.buscarUser(nome);
             const pessoaNew = promptPessoaUpdate(pessoaUpdate);
-            this.atualizarUsuario(nome, pessoaNew);
+            this.atualizarUser(nome, pessoaNew);
             break;
           case 5:
-            const deleteNome = prompt("Informe o usuário a ser removido: ").trim();
+            const deleteNome = prompt(
+              "Informe o usuário a ser removido: "
+            ).trim();
             this.deleteUser(deleteNome);
             break;
         }
-      } catch (error:any) {
-        let messagemErro:string = error.message.replace("\n", "")
+      } catch (error: any) {
+        let messagemErro: string = error.message.replace("\n", "");
         console.error("\nOcorreu um erro:", messagemErro);
       }
 
