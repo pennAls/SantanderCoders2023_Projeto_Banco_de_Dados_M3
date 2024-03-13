@@ -3,12 +3,13 @@ import { Pessoa } from "./Pessoa.ts";
 export class Banco_Dados {
   private pessoas: Pessoa[] = [];
 
-  adicionarUsuario(novaPessoa: Pessoa): string {
+  adicionarUsuario(novaPessoa: Pessoa): string | void {
     const pessoaExiste = this.pessoas.find(
       (pessoa) => pessoa.Nome === novaPessoa.Nome
     );
     if (pessoaExiste) {
-      return `Já existe uma pessoa cadastrada com esse nome.`;
+      console.log("Já existe uma pessoa cadastrada com esse nome.");
+      return;
     } else {
       this.pessoas.push(novaPessoa);
       return "Adicionado com sucesso.";
@@ -20,7 +21,7 @@ export class Banco_Dados {
       (pessoa) => pessoa.Nome === nome
     );
 
-    if (pessoaEncontrada) {
+    if (pessoaEncontrada[0]) {
       console.log(pessoaEncontrada);
       return pessoaEncontrada[0];
     } else {
@@ -48,12 +49,12 @@ export class Banco_Dados {
     return this.pessoas;
   }
 
-  private deletarUsuario(deleteUser: Pessoa) {
+  private deletarUsuario(deleteUserName: string) {
     if (this.pessoas.length === 0) {
       return "Não há Usuários cadastrados";
     }
     const pessoaIndex = this.pessoas.findIndex(
-      (person) => person.Nome === deleteUser.Nome
+      (person) => person.Nome === deleteUserName
     );
     if (pessoaIndex !== -1) {
       this.pessoas.splice(pessoaIndex, 1);
@@ -63,15 +64,12 @@ export class Banco_Dados {
     }
   }
 
-  public deleteUser(people: Pessoa) {
+  public deleteUser(people: string) {
     const result = this.deletarUsuario(people);
     console.log(result);
   }
 }
 
-const dados = new Banco_Dados();
 
-const novaPessoa = new Pessoa("joao", 20, "12312312312", "fulano@gmail.com");
-const novaPessoa2 = new Pessoa("joaoR", 20, "12312312312", "fulano@gmail.com");
 
-// const newPessoa = new Pessoa("joao", 18, "12312312312");
+

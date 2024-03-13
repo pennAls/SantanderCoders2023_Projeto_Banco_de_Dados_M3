@@ -1,6 +1,6 @@
 import { Pessoa } from "./Pessoa";
 import { Banco_Dados } from "./Banco_Dados";
-import { promptPessoaNew, promptPessoaUpdate, prompt } from "./Prompts";
+import { promptPessoaNew, promptPessoaUpdate, prompt } from "./prompts";
 
 class Menu {
   menu = [
@@ -65,8 +65,7 @@ class Menu {
           const deleteNome = prompt(
             "Informe o usuário a ser removido: "
           ).trim();
-          const pessoaDelete = dados.buscarPeloNome(deleteNome);
-          dados.deleteUser(pessoaDelete);
+          dados.deleteUser(deleteNome);
 
           break;
       }
@@ -79,18 +78,3 @@ class Menu {
 const dados = new Banco_Dados();
 const menu = new Menu();
 menu.iniciar();
-
-dados.adicionarUsuario(
-  new Pessoa("Fulano", 19, "040.142.444-22", "maria@google.com.br")
-);
-
-// console.table(dados.listarPessoa())
-
-// //Buscar
-
-// //Alterar
-
-// console.log(pessoaNew)
-// dados.alterar(nome, pessoaNew)
-
-// console.table(dados.listarPessoa())
