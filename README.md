@@ -36,11 +36,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 💻 Desenvolvedores:
 
-Lucas Pena: <a href="https://www.linkedin.com/in/lucaspenals/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/lucaspenals/" height="30" width="40" /></a>
+Lucas Pena: <a href="https://github.com/pennAls" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="https://github.com/pennAls" height="30" width="40" /></a>
 
-Priscila Lima: <a href="https://www.linkedin.com/in/lucaspenals/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/lucaspenals/" height="30" width="40" /></a>
+Priscila Lima: <a href="https://github.com/prisciladelima" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="https://github.com/prisciladelima" height="30" width="40" /></a>
 
-Thiago Albino: <a href="https://www.linkedin.com/in/thiagoalbino/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/thiagoalbino/" height="30" width="40" /></a>
+Thiago Albino: <a href="https://github.com/Thi08" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="https://github.com/Thi08" height="30" width="40" /></a>
+
 
 
 
