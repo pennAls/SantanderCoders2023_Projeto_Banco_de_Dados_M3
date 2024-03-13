@@ -8,12 +8,12 @@ export class Banco_Dados {
     );
     if (pessoaExiste) {
       console.log(
-        `Ocorreu um erro: Já existe uma pessoa cadastrada com esse nome.\n`
+        `Ocorreu um erro: Já existe uma pessoa cadastrada com o nome "${novaPessoa.Nome}".\n`
       );
       return;
     } else {
       this.pessoas.push(novaPessoa);
-      console.log(`Pessoa adicionada com sucesso.\n`);
+      console.log(`O usuário "${novaPessoa.Nome}" foi adicionado com sucesso.\n`);
       return;
     }
   }
@@ -27,20 +27,20 @@ export class Banco_Dados {
       console.log(pessoaEncontrada);
       return pessoaEncontrada[0];
     } else {
-      console.error(`Ocorreu um erro: O nome pesquisado não foi encontrado.\n`);
+      console.error(`Ocorreu um erro: O usuário chamado "${nome}" não foi encontrado.\n`);
       return pessoaEncontrada[0];
     }
   }
 
   private atualizarUsuario(nome: string, pessoa: Pessoa) {
     if (!pessoa) {
-      console.log(`Ocorreu um erro: Usuário não encontrado.\n`);
+      console.log(`Ocorreu um erro: Usuário "${nome}" não encontrado.\n`);
       return;
     }
     const indice = this.pessoas.findIndex((p) => p.Nome === nome);
 
     this.pessoas[indice] = pessoa;
-    console.log(`Pessoa atualizada com sucesso!\n`);
+    console.log(`O usuário "${nome}" foi atualizado com sucesso!\n`);
   }
 
   private listarUsuario(): Pessoa[] {
@@ -54,16 +54,16 @@ export class Banco_Dados {
 
   private deletarUsuario(deleteUserName: string) {
     if (this.pessoas.length === 0) {
-      return `Ocorreu um erro: Não há usuários cadastrados`;
+      return `Ocorreu um erro: Não há um usuário cadastrado chamado "${deleteUserName}".`;
     }
     const pessoaIndex = this.pessoas.findIndex(
       (person) => person.Nome === deleteUserName
     );
     if (pessoaIndex !== -1) {
       this.pessoas.splice(pessoaIndex, 1);
-      return `Usuário deletado com sucesso.`;
+      return `Usuário "${deleteUserName}"deletado com sucesso.`;
     } else {
-      return `Ocorreu um erro: Usuário não encontrado.`;
+      return `Ocorreu um erro: Usuário "${deleteUserName}" não encontrado.`;
     }
   }
 
