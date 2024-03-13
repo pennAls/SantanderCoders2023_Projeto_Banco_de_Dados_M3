@@ -1,5 +1,4 @@
-import { Pessoa } from "./Pessoa.ts";
-
+import { Pessoa } from "./Pessoa";
 export class Banco_Dados {
   private pessoas: Pessoa[] = [];
 
@@ -8,11 +7,11 @@ export class Banco_Dados {
       (pessoa) => pessoa.Nome === novaPessoa.Nome
     );
     if (pessoaExiste) {
-      console.log("Já existe uma pessoa cadastrada com esse nome.");
+      console.log(`Ocorreu um erro: Já existe uma pessoa cadastrada com esse nome.\n`);
       return;
     } else {
       this.pessoas.push(novaPessoa);
-      return "Adicionado com sucesso.";
+      return `Pessoa adicionada com sucesso.\n`;
     }
   }
 
@@ -25,19 +24,20 @@ export class Banco_Dados {
       console.log(pessoaEncontrada);
       return pessoaEncontrada[0];
     } else {
-      throw new Error("Nome não encontrado");
+      console.error(`Ocorreu um erro: O nome pesquisado não foi encontrado.\n`);
+      return pessoaEncontrada[0];
     }
   }
 
   atualizarUsuario(nome: string, pessoa: Pessoa) {
     if (!pessoa) {
-      console.log(`Usuário não Encontrado`);
+      console.log(`Ocorreu um erro: Usuário não encontrado.\n`);
       return;
     }
     const indice = this.pessoas.findIndex((p) => p.Nome === nome);
 
     this.pessoas[indice] = pessoa;
-    console.log("Pessoa atualizada com sucesso!");
+    console.log(`Pessoa atualizada com sucesso!\n`);
   }
 
   listarUsuario(): Pessoa[] {
@@ -51,16 +51,16 @@ export class Banco_Dados {
 
   private deletarUsuario(deleteUserName: string) {
     if (this.pessoas.length === 0) {
-      return "Não há Usuários cadastrados";
+      return `Ocorreu um erro: Não há usuários cadastrados`;
     }
     const pessoaIndex = this.pessoas.findIndex(
       (person) => person.Nome === deleteUserName
     );
     if (pessoaIndex !== -1) {
       this.pessoas.splice(pessoaIndex, 1);
-      return "Usuário deletado com sucesso";
+      return `Usuário deletado com sucesso.`;
     } else {
-      return "Usuário não encontrado";
+      return `Ocorreu um erro: Usuário não encontrado.`;
     }
   }
 
@@ -69,7 +69,3 @@ export class Banco_Dados {
     console.log(result);
   }
 }
-
-
-
-

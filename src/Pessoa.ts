@@ -6,8 +6,11 @@ export class Pessoa {
 
   constructor(nome: string, idade: number, cpf: string, email: string) {
     for (const letra of nome) {
-      if (letra === " " || !isNaN(parseInt(letra))) {
-        throw new Error("O nome não pode conter números");
+      if (letra === " ") {
+        throw new Error("\nO nome não pode conter espaços.");
+      }
+      if (!isNaN(parseInt(letra))) {
+        throw new Error("\nO nome não pode conter números.");
       }
     }
     this._Nome = nome;
@@ -15,8 +18,15 @@ export class Pessoa {
     if (!isNaN(idade) && idade >= 18 && idade < 120) {
       this._Idade = idade;
     } else {
-      throw new Error("A idade é inválida");
+      throw new Error("\nA idade é inválida.");
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      throw new Error("\nO email está inválido.");
+    }
+    this._Email = email;
+
     const cpfFormatado = cpf
       .replaceAll(".", "")
       .replaceAll("-", "")
@@ -24,14 +34,8 @@ export class Pessoa {
     if (cpfFormatado) {
       this._CPF = cpfFormatado[0];
     } else {
-      throw new Error("O CPF é inválido");
+      throw new Error("\nO CPF é inválido.");
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      throw new Error("O email está inválido");
-    }
-    this._Email = email;
   }
 
   public get Nome(): string {
